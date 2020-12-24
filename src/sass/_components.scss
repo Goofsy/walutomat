@@ -1,61 +1,151 @@
 // Navbar
-nav {
-  background-color: $primary-color;
-  height: 100px;
-
-  .navbar {
-    &__title {
-      color: $light-color;
-      font-size: 2.3rem;
-      padding: 1.7rem 0;
-    }
+.nav {
+  &__title {
+    padding: 2rem;
+    font-size: 2.5rem;
+    color: $light-color;
   }
 }
 
 // Form
 .form {
-  padding-top: 3rem;
   display: flex;
   justify-content: center;
+  padding-top: 4.5rem;
 
   &__group {
-    display: flex;
-    flex-direction: column;
-    padding: 0 1rem;
+    margin: 0 1rem;
+    width: 141px;
+    position: relative;
 
-    label {
-      font-size: 1.4rem;
-      color: $dark-color;
-      padding: 3px 0;
-    }
-
-    input {
-      padding: 2px;
-      height: 4rem;
-      border: 2px solid $dark-color;
-      border-radius: 0.5rem;
-      outline: none;
-      font-size: 1.2rem;
-      background-color: $light-color;
-      transition: 0.5s border-color;
-
-      &:focus {
-        border-color: $primary-color;
-      }
+    img {
+      width: 60%;
+      padding-right: 4px;
     }
   }
 
-  &__btn {
-    cursor: pointer;
+  .dropdown {
+    visibility: hidden;
+    position: absolute;
+    top: 0px;
+    background-color: #fff;
+    border: 2px solid $medium-color;
+    border-radius: 4px;
+  }
+}
+
+// Inputs
+%input-share {
+  outline: none;
+  border: 2px solid $medium-color;
+  border-radius: 4px;
+  transition: all 0.5s;
+  padding-left: 0.5rem;
+  background-color: $light-color;
+  font-size: 1rem;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &:focus {
+    border-color: $primary-color;
+  }
+}
+
+.input {
+  &--amount {
+    @extend %input-share;
+  }
+
+  &--search {
+    @extend %input-share;
+    width: 100%;
+    height: 2.3rem;
     border: none;
-    outline: none;
-    margin-top: 2.1rem;
-    color: $dark-color;
-    background-color: $light-color;
-    transition: 0.3s color;
+    border-radius: 0px;
+
+    &:hover {
+      background-color: $medium-color;
+    }
+
+    &:focus {
+      background-color: $medium-color;
+    }
+  }
+}
+
+// Arrows
+.arrow {
+  border: solid $dark-color;
+  border-width: 0 3px 3px 0;
+  display: inline-block;
+  padding: 3px;
+
+  &--right {
+    transform: rotate(-45deg);
+    -webkit-transform: rotate(-45deg);
+    border-width: 0 4px 4px 0;
+    padding: 6px;
+  }
+
+  &--down {
+    transform: rotate(45deg);
+    -webkit-transform: rotate(45deg);
+    position: absolute;
+    top: 0.5rem;
+    right: 0.5rem;
+  }
+}
+
+// Buttons
+.btn {
+  position: relative;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  background-color: $light-color;
+  outline: none;
+  border: 2px solid $medium-color;
+  border-radius: 4px;
+  font-weight: bold;
+  padding: 0.1rem 1.3rem;
+  transition: all 0.5s;
+
+  &:hover {
+    border-color: $primary-color;
+  }
+
+  &--switch {
+    border: none;
+    padding: 0;
 
     &:hover {
       color: $primary-color;
+    }
+  }
+  &--submit {
+    padding-right: 1.5rem;
+    padding-left: 1.1rem;
+    font-size: 2rem;
+  }
+
+  &--search {
+    border: none;
+    border-radius: 0px;
+    height: 2.2rem;
+    margin: auto;
+    width: 100%;
+    border-top: 1px solid $medium-color;
+    padding: 0.4rem;
+
+    &:hover {
+      background-color: $medium-color;
+    }
+
+    img {
+      width: 35%;
     }
   }
 }

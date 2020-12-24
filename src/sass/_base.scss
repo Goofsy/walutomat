@@ -8,55 +8,63 @@
 // Variables
 $site-width: 1280px;
 
-$light-color: #f3f3f3;
-$medium-color: rgb(235, 235, 235);
+$light-color: #f8f8f8;
+$medium-color: rgb(210, 210, 210);
 $dark-color: #333;
-$primary-color: #f6a90f;
+$primary-color: #27ae60;
 
 // Main
 body {
   height: 100vh;
   font-family: sans-serif;
-  background-color: $light-color;
+  background: no-repeat
+    linear-gradient(
+      135deg,
+      rgb(39, 174, 96) 0%,
+      rgb(114, 209, 146) 38%,
+      rgb(245, 245, 245) 38%,
+      rgb(245, 245, 245) 78%,
+      rgb(114, 209, 146) 78%,
+      rgb(39, 174, 96) 100%
+    );
 }
 
 // Calculator
 .calculator {
+  margin: auto;
+  width: 80%;
+  height: 40%;
   background-color: $light-color;
-  height: 500px;
+  box-shadow: 2px 2px 10px 4px rgba(#474747, 0.1);
+
+  .result {
+    &__amount {
+      text-align: center;
+      font-size: 2.6rem;
+      color: $dark-color;
+      padding: 3.2rem;
+    }
+
+    &__info {
+      display: flex;
+      justify-content: space-around;
+      font-weight: bold;
+      color: $dark-color;
+
+      &__last-update {
+        font-weight: normal;
+        margin-top: 16px;
+      }
+    }
+  }
 }
 
-.result {
-  &__full-xy {
-    padding: 5rem;
-    text-align: center;
-    font-size: 4rem;
-    color: $dark-color;
-  }
-
-  &__info {
-    display: flex;
-    justify-content: space-around;
-    color: $dark-color;
-
-    h4 {
-      font-size: 1.5rem;
-    }
-
-    p {
-      margin-top: 35px;
-    }
-  }
-
-  // &__one-xy {
-  //   display: block;
-  // }
-
-  // &__one-yx {
-  //   display: block;
-  // }
-
-  // &__last-update {
-  //   display: block;
-  // }
+// Chart
+.chart {
+  margin: auto;
+  width: 80%;
+  height: 40%;
+  background-color: $light-color;
+  box-shadow: 2px 2px 10px 4px rgba(#474747, 0.1);
+  border-top: 3px solid $primary-color;
 }
