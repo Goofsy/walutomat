@@ -9,11 +9,22 @@ const controlCurrencies = async function () {
 };
 
 const controlSearchCurrency = async function () {
-  console.log(await model.searchCurrency());
+  try {
+    const formData = View.getFormData();
+
+    View.renderSearchCurrency(
+      await model.searchCurrency(formData.amount, formData.from, formData.to)
+    );
+  } catch (err) {
+    View.renderSearchError(err.message);
+  }
 };
 
 const init = async function () {
   await model.getCurrencies();
+  View.renderSearchCurrency(await model.searchCurrency());
+  View.addHandlerSearchRate(controlSearchCurrency);
+  View.addHandlerSearchRateByEnter(controlSearchCurrency);
   View.addHandlerFilterCurrencies(controlCurrencies);
   View.handlerOpenCurrenciesList(model.state.currencies);
   View.handlerSwapCurrencies();

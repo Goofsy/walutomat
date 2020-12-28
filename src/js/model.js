@@ -38,13 +38,19 @@ const createCurrencyObject = function (data) {
 };
 
 export const searchCurrency = async function (
-  amount = 10,
+  amount = 1,
   from = 'EUR',
   to = 'PLN'
 ) {
-  const res = await fetch(
-    `${API_URL}latest?amount=${amount}&from=${from}&to=${to}`
-  );
-  const data = await res.json();
-  return createCurrencyObject(data);
+  try {
+    if (amount < 1) throw new Error('Wpisz minimum 1');
+    if (amount.length > 10) throw new Error('Za duza kwota');
+    const res = await fetch(
+      `${API_URL}latest?amount=${amount}&from=${from}&to=${to}`
+    );
+    const data = await res.json();
+    return createCurrencyObject(data);
+  } catch (err) {
+    throw err;
+  }
 };

@@ -19,12 +19,17 @@
 
       <section class="calculator">
         <form class="form">
-          <input type="text" class="input--amount" placeholder="Kwota" />
+          
+          <div class="form__group">
+            <input type="number" class="input--amount" placeholder="Kwota" />
+            <p class="error-text"></p>
+          </div>
+         
 
           <div class="form__group">
-            <button class="btn dropdown-open btn-from">
+            <button class="btn dropdown-open btn-from" data-currency="EUR">
               <div class="btn-content">
-                <img src="./src/flags/EUR.png" alt="EUR" data-currency="EUR"/>
+                <img src="./src/flags/EUR.png" alt="EUR" />
                 <p>EUR</p>
               </div>
               <i class="arrow arrow--down"></i></p>
@@ -32,9 +37,7 @@
             <div class="dropdown">
               <input type="text" class="input--search" placeholder="Wyszukaj...">
              
-              <ul class="currencies-list">
-                
-              </ul>
+              <ul class="currencies-list" data-list="to"></ul>
             </div>
           </div>
 
@@ -43,18 +46,16 @@
           </button>
 
           <div class="form__group">
-            <button class="btn dropdown-open btn-to">
+            <button class="btn dropdown-open btn-to" data-currency="PLN">
               <div class="btn-content">
-                <img src="./src/flags/PLN.png" alt="PLN" data-currency="pln"/>
+                <img src="./src/flags/PLN.png" alt="PLN"/>
                 <p>PLN</p>
               </div>
               <i class="arrow arrow--down"></i></p>
             </button>
             <div class="dropdown">
               <input type="text" class="input--search" placeholder="Wyszukaj...">
-              <ul class="currencies-list">
-                
-              </ul>
+              <ul class="currencies-list" data-list="from"></ul>
             </div>
           </div>
 
