@@ -22,44 +22,39 @@
           <input type="text" class="input--amount" placeholder="Kwota" />
 
           <div class="form__group">
-            <button class="btn btn--from">
-              <img src="./src/flags/EUR.png" alt="" />
-              <p>EUR</p>
+            <button class="btn dropdown-open btn-from">
+              <div class="btn-content">
+                <img src="./src/flags/EUR.png" alt="EUR" data-currency="EUR"/>
+                <p>EUR</p>
+              </div>
               <i class="arrow arrow--down"></i></p>
             </button>
             <div class="dropdown">
-              <input type="text" class="input--search input--from" placeholder="Wyszukaj...">
-              <button class="btn btn--search">
-                <img src="./src/flags/EUR.png" alt="" />
-                <p>EUR</p>
-              </button>
-              <button class="btn btn--search">
-                <img src="./src/flags/USD.png" alt="" />
-                <p>USD</p>
-              </button>
+              <input type="text" class="input--search" placeholder="Wyszukaj...">
+             
+              <ul class="currencies-list">
+                
+              </ul>
             </div>
           </div>
 
-          <button class="btn btn--switch">
+          <button class="btn btn--swap">
             <i class="fas fa-exchange-alt fa-2x"></i>
           </button>
 
           <div class="form__group">
-            <button class="btn btn--to">
-              <img src="./src/flags/PLN.png" alt="" />
-              <p>PLN</p>
+            <button class="btn dropdown-open btn-to">
+              <div class="btn-content">
+                <img src="./src/flags/PLN.png" alt="PLN" data-currency="pln"/>
+                <p>PLN</p>
+              </div>
               <i class="arrow arrow--down"></i></p>
             </button>
             <div class="dropdown">
-              <input type="text" class="input--search input--to" placeholder="Wyszukaj...">
-              <button class="btn btn--search">
-                <img src="./src/flags/EUR.png" alt="" />
-                <p>EUR</p>
-              </button>
-              <button class="btn btn--search">
-                <img src="./src/flags/USD.png" alt="" />
-                <p>USD</p>
-              </button>
+              <input type="text" class="input--search" placeholder="Wyszukaj...">
+              <ul class="currencies-list">
+                
+              </ul>
             </div>
           </div>
 
@@ -68,13 +63,13 @@
           </button>
         </form>
         <div class="result">
-          <h2 class="result__amount">1000,00 EUR = 4521,00 PLN</h2>
+          <h2 class="result__amount"></h2>
           <div class="result__info">
             <div>
-              <p class="result__info__one-xy">1 EUR = 4,52 PLN</p>
-              <p class="result__info__one-yx">1 PLN = 0.32 EUR</p>
+              <p class="result__info__one-xy"></p>
+              <p class="result__info__one-yx"></p>
             </div>
-            <p class="result__info__last-update">Ostatnia aktualizacja: 24.12.2020</p>
+            <p class="result__info__last-update"></p>
           </div>
         </div>
       </section>
