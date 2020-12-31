@@ -15,9 +15,25 @@ const controlSearchCurrency = async function () {
     View.renderSearchCurrency(
       await model.searchCurrency(formData.amount, formData.from, formData.to)
     );
+
+    View.updateChart(
+      await model.getCurrencyTimeSeries(formData.from, formData.to)
+    );
   } catch (err) {
     View.renderSearchError(err.message);
   }
+};
+
+const controlChartByDays = async function () {
+  const formData = View.getFormData();
+  const daysChart = View.daysChart;
+
+  const dataTimeSeries = await model.getCurrencyTimeSeries(
+    formData.from,
+    formData.to,
+    daysChart
+  );
+  View.updateChart(dataTimeSeries);
 };
 
 const init = async function () {
@@ -30,5 +46,9 @@ const init = async function () {
   View.handlerSwapCurrencies();
   View.handlerChooseCurrency();
   View.handlerCloseCurrenciesList();
+  View.renderChart(await model.getCurrencyTimeSeries());
+  View.handlerOpenDropdownChart();
+  View.addHandlerSelectMonthsChart(controlChartByDays);
+  View.handlerCloseDropdownChart();
 };
 init();

@@ -45,6 +45,7 @@
 
   .dropdown {
     display: none;
+    z-index: 15;
 
     position: absolute;
     top: 0px;
@@ -202,5 +203,12 @@ input[type='number'] {
     img {
       width: 37px;
     }
+  }
+  &--chart {
+    justify-content: flex-start;
+    font-weight: normal;
+    padding: 0.2rem 1.2rem 0.2rem 1rem;
+    width: 100%;
+    font-size: 0.9rem;
   }
 }

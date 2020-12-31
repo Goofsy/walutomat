@@ -61,10 +61,57 @@ body {
 
 // Chart
 .chart {
+  position: relative;
   margin: auto;
   width: 80%;
   height: 40%;
   background-color: $light-color;
   box-shadow: 2px 2px 10px 4px rgba(#474747, 0.1);
   border-top: 3px solid $primary-color;
+
+  &__header {
+    position: absolute;
+    width: 120px;
+    top: 0.6rem;
+    left: 3.4rem;
+
+    .arrow--down {
+      top: 0.3rem;
+    }
+  }
+
+  &__dropdown {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: $light-color;
+    border: 2px solid $medium-color;
+    border-radius: 4px;
+
+    .btn {
+      &:last-of-type {
+        border-bottom: none;
+      }
+
+      &--chart {
+        justify-content: center;
+        text-align: center;
+        border: none;
+        border-bottom: 2px solid $medium-color;
+        border-radius: 0;
+        padding: 0.4rem;
+      }
+
+      &:hover {
+        background-color: $medium-color;
+        border-color: $medium-color;
+      }
+    }
+  }
+
+  #myChart {
+    padding: 0 1rem;
+  }
 }

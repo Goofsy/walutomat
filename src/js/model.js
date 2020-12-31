@@ -54,3 +54,37 @@ export const searchCurrency = async function (
     throw err;
   }
 };
+
+const createCurrencyTimeSeries = function (data) {
+  const rates = Object.values(data.rates).map(el => {
+    return Object.values(el)[0];
+  });
+  const to = Object.keys(Object.values(data.rates)[0])[0];
+  const dates = Object.keys(data.rates).map(el => {
+    return el.split('-').reverse().join('.');
+  });
+
+  return {
+    from: data.base,
+    to: to,
+    dates: dates,
+    rates: rates,
+  };
+};
+
+const formateDate = function (days) {
+  let currentDate = new Date();
+  const dateMinusDays = currentDate.setDate(currentDate.getDate() - days);
+  return new Date(dateMinusDays).toISOString().split('T')[0];
+};
+
+export const getCurrencyTimeSeries = async function (
+  from = 'EUR',
+  to = 'PLN',
+  days = 30
+) {
+  const date = formateDate(days);
+  const res = await fetch(`${API_URL}${date}..?to=${to}&from=${from}`);
+  const data = await res.json();
+  return createCurrencyTimeSeries(data);
+};

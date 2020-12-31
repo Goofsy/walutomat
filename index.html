@@ -9,6 +9,7 @@
       src="https://kit.fontawesome.com/7b33546b62.js"
       crossorigin="anonymous"
     ></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
     <script defer src="/src/js/controller.js"></script>
   </head>
   <body>
@@ -76,7 +77,27 @@
       </section>
 
       <section class="chart">
-        <div class="siema"></div>
+        <div class="chart__header">
+          <button class="btn btn--chart open-chart-dropdown">
+            <p class="chart__months">1 Miesiąc</p>
+            <i class="arrow arrow--down"></i>
+          </button>
+          <div class="chart__dropdown">
+            <button class="btn btn--chart " data-days="30">
+              <p>1 Miesiąc</p>
+            </button>
+            <button class="btn btn--chart" data-days="90">
+              <p>3 Miesiące</p>
+            </button>
+            <button class="btn btn--chart" data-days="180">
+              <p>6 Miesięcy</p>
+            </button>
+            <button class="btn btn--chart" data-days="360">
+              <p>1 Rok</p>
+            </button>
+          </div>
+        </div>
+        <canvas id="myChart"canvas>
       </section>
     </div>
   </body>

@@ -19,8 +19,107 @@ class View {
   _resultOneXY = document.querySelector('.result__info__one-xy');
   _resultOneYX = document.querySelector('.result__info__one-yx');
 
+  _chart = document.querySelector('#myChart');
+  _btnOpenDropdownChart = document.querySelector('.open-chart-dropdown');
+  _chartDropdown = document.querySelector('.chart__dropdown');
+  _chartMonths = document.querySelector('.chart__months');
+  _chartTitle = document.querySelector('.chart__title');
+  _myChart;
+
   inputSearchCurrenciesValue;
+  daysChart;
   constructor() {}
+
+  // Chart
+  updateChart({ from, to, dates, rates }) {
+    const { config } = this.myChart;
+    config.data.labels = dates;
+    config.data.datasets[0].data = rates;
+    config.data.datasets[0].label = `1 ${from} = `;
+    config.options.title.text = `${from} na ${to}`;
+    this.myChart.update();
+  }
+
+  addHandlerSelectMonthsChart(handler) {
+    this._chartDropdown.addEventListener('click', e => {
+      const btn = e.target.closest('.btn--chart');
+      if (!btn) return;
+      this._chartMonths.innerHTML = btn.innerHTML;
+      this.daysChart = btn.dataset.days;
+      handler();
+    });
+  }
+
+  handlerCloseDropdownChart() {
+    window.addEventListener('click', e => {
+      if (e.target.closest('.open-chart-dropdown')) return;
+
+      this._chartDropdown.style.display = 'none';
+    });
+  }
+
+  handlerOpenDropdownChart() {
+    this._btnOpenDropdownChart.addEventListener('click', e => {
+      this._chartDropdown.style.display = 'block';
+    });
+  }
+
+  renderChart({ from, to, rates, dates }) {
+    Chart.defaults.global.defaultFontFamily = 'sans-serif';
+
+    this.myChart = new Chart(this._chart, {
+      type: 'line',
+      data: {
+        labels: dates,
+        datasets: [
+          {
+            label: `1 ${from} = `,
+            data: rates,
+            backgroundColor: 'rgba(39, 174, 96, 0.3)',
+            borderColor: '#27ae60',
+            borderWidth: 1,
+          },
+        ],
+      },
+      options: {
+        maintainAspectRatio: false,
+        animation: {
+          duration: 0,
+        },
+        scales: {
+          xAxes: [
+            {
+              ticks: {
+                minRotation: 65,
+                maxTicksLimit: 12,
+              },
+            },
+          ],
+        },
+        title: {
+          display: true,
+          position: 'top',
+          text: `${from} na ${to}`,
+          fontSize: 22,
+        },
+        legend: {
+          display: false,
+        },
+        tooltips: {
+          displayColors: false,
+
+          callbacks: {
+            label: function (tooltipItem, data) {
+              let label = data.datasets[tooltipItem.datasetIndex].label || '';
+
+              label += Math.round(tooltipItem.yLabel * 1000) / 1000;
+              return label;
+            },
+          },
+        },
+      },
+    });
+  }
 
   // Search Currency
   addHandlerSearchRateByEnter(handler) {
@@ -30,6 +129,7 @@ class View {
       handler();
       this._inputAmount.value = '';
       this._hideSearchError();
+      this._chartMonths.innerHTML = '1 Miesiąc';
     });
   }
 
@@ -38,6 +138,7 @@ class View {
       handler();
       this._inputAmount.value = '';
       this._hideSearchError();
+      this._chartMonths.innerHTML = '1 Miesiąc';
     });
   }
 
