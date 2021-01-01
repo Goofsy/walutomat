@@ -15,7 +15,7 @@ $primary-color: #27ae60;
 
 // Main
 body {
-  height: 100vh;
+  min-height: 100vh;
   font-family: sans-serif;
   background: no-repeat
     linear-gradient(
@@ -33,9 +33,9 @@ body {
 .calculator {
   margin: auto;
   width: 80%;
-  height: 40%;
   background-color: $light-color;
   box-shadow: 2px 2px 10px 4px rgba(#474747, 0.1);
+  padding-bottom: 2rem;
 
   .result {
     &__amount {
@@ -64,7 +64,8 @@ body {
   position: relative;
   margin: auto;
   width: 80%;
-  height: 40%;
+  height: 400px;
+  padding: 1rem;
   background-color: $light-color;
   box-shadow: 2px 2px 10px 4px rgba(#474747, 0.1);
   border-top: 3px solid $primary-color;
@@ -72,7 +73,7 @@ body {
   &__header {
     position: absolute;
     width: 120px;
-    top: 0.6rem;
+    top: 1.2rem;
     left: 3.4rem;
 
     .arrow--down {
@@ -109,9 +110,5 @@ body {
         border-color: $medium-color;
       }
     }
-  }
-
-  #myChart {
-    padding: 0 1rem;
   }
 }
