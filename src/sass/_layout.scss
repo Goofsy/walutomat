@@ -6,81 +6,88 @@
 }
 
 @media (max-width: 640px) {
-  .form {
-    flex-direction: column;
-    padding-top: 1.1rem;
-
-    &__group {
-      margin: auto;
-      width: 90%;
-
-      &:first-of-type {
-        width: 90%;
-        margin: auto;
-        height: 60px;
-        margin-bottom: 1.1rem;
-      }
-
-      .input {
-        &--amount {
-          display: inline-block;
-          width: 100%;
-          padding: 1.1rem;
-          font-size: 1.3rem;
-        }
-
-        &--search {
-          height: 50px;
-        }
-      }
-
-      .dropdown {
-        width: 100%;
-      }
-
-      .dropdown-open {
-        display: inline-block;
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        padding: 0 1.1rem;
-        margin-bottom: 1.1rem;
-
-        img {
-          width: 60px;
-        }
-      }
-    }
-
-    .btn {
-      &--submit {
-        display: inline-block;
-        width: 90%;
-        margin: auto;
-        height: 60px;
-      }
-
-      &--swap {
-        display: none;
-      }
-
-      &--search {
-        height: 50px;
-        img {
-          width: 50px;
-        }
-      }
-    }
-  }
-
   .nav__title {
     text-align: center;
   }
 
-  .result {
-    &__info {
+  .calculator {
+    padding-bottom: 1.5rem;
+    .form {
       flex-direction: column;
-      text-align: center;
+      padding-top: 1.5rem;
+
+      &__group {
+        margin: auto;
+        width: 90%;
+
+        &:first-of-type {
+          width: 90%;
+          margin: auto;
+          height: 60px;
+          margin-bottom: 1rem;
+        }
+
+        .input {
+          &--amount {
+            display: inline-block;
+            width: 100%;
+            padding: 1.1rem;
+            font-size: 1.3rem;
+          }
+
+          &--search {
+            height: 50px;
+          }
+        }
+
+        .dropdown {
+          width: 100%;
+        }
+
+        .dropdown-open {
+          display: inline-block;
+          width: 100%;
+          display: flex;
+          justify-content: space-between;
+          padding: 0 1.1rem;
+          margin-bottom: 1rem;
+
+          img {
+            width: 60px;
+          }
+        }
+      }
+
+      .btn {
+        &--submit {
+          display: inline-block;
+          width: 90%;
+          margin: auto;
+          height: 60px;
+        }
+
+        &--swap {
+          display: none;
+        }
+
+        &--search {
+          height: 50px;
+          img {
+            width: 50px;
+          }
+        }
+      }
+    }
+
+    .result {
+      &__amount {
+        padding: 1.8rem;
+      }
+
+      &__info {
+        flex-direction: column;
+        text-align: center;
+      }
     }
   }
 
