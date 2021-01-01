@@ -1,1 +1,99 @@
-<!DOCTYPE html><html lang="en"><head><meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0"><title>Walutomat</title><link rel="stylesheet" href="/main.3bd54ef5.css"><script src="https://kit.fontawesome.com/7b33546b62.js" crossorigin></script><script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script><script defer src="/controller.9378f125.js"></script></head><body> <div class="container"> <nav class="nav"> <h2 class="nav__title">Wymiana walut</h2> </nav> <section class="calculator"> <form class="form"> <div class="form__group"> <input type="number" class="input--amount" placeholder="Kwota"> <p class="error-text"></p> </div> <div class="form__group"> <button class="btn btn-from dropdown-open" data-currency="EUR"> <div class="btn-content"> <img src="/EUR.37744f0a.png" alt="EUR"> <p>EUR</p> </div> <i class="arrow arrow--down"></i><p></p> </button> <div class="dropdown"> <input type="text" class="input--search" placeholder="Wyszukaj..."> <ul class="currencies-list" data-list="to"></ul> </div> </div> <button class="btn btn--swap"> <i class="fa-2x fa-exchange-alt fas"></i> </button> <div class="form__group"> <button class="btn btn-to dropdown-open" data-currency="PLN"> <div class="btn-content"> <img src="/PLN.126a76b1.png" alt="PLN"> <p>PLN</p> </div> <i class="arrow arrow--down"></i><p></p> </button> <div class="dropdown"> <input type="text" class="input--search" placeholder="Wyszukaj..."> <ul class="currencies-list" data-list="from"></ul> </div> </div> <button type="submit" class="btn btn--submit"> <i class="arrow arrow--right"></i><p></p> </button> </form> <div class="result"> <h2 class="result__amount"></h2> <div class="result__info"> <div> <p class="result__info__one-xy"></p> <p class="result__info__one-yx"></p> </div> <p class="result__info__last-update"></p> </div> </div> </section> <section class="chart"> <div class="chart__header"> <button class="btn btn--chart open-chart-dropdown"> <p class="chart__months">1 Miesiąc</p> <i class="arrow arrow--down"></i> </button> <div class="chart__dropdown"> <button class="btn btn--chart" data-days="30"> <p>1 Miesiąc</p> </button> <button class="btn btn--chart" data-days="90"> <p>3 Miesiące</p> </button> <button class="btn btn--chart" data-days="180"> <p>6 Miesięcy</p> </button> <button class="btn btn--chart" data-days="360"> <p>1 Rok</p> </button> </div> </div> <canvas id="myChart" canvas=""> </canvas></section> </div> </body></html>
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Walutomat</title>
+    <link rel="stylesheet" href="/main.2026268b.css">
+    <script src="https://kit.fontawesome.com/7b33546b62.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.min.js"></script>
+    <script defer="" src="/controller.e87f5190.js"></script>
+  <script src="/main.2026268b.js"></script></head>
+  <body>
+    <div class="container">
+      <nav class="nav">
+        <h2 class="nav__title">Wymiana walut</h2>
+      </nav>
+
+      <section class="calculator">
+        <form class="form">
+          <div class="form__group">
+            <input type="number" class="input--amount" placeholder="Kwota">
+            <p class="error-text"></p>
+          </div>
+
+          <div class="form__group">
+            <button class="btn dropdown-open btn-from" data-currency="EUR">
+              <div class="btn-content">
+                <img src="/EUR.ed0f8d63.png" alt="EUR">
+                <p>EUR</p>
+              </div>
+              <i class="arrow arrow--down"></i><p></p>
+            </button>
+            <div class="dropdown">
+              <input type="text" class="input--search" placeholder="Wyszukaj...">
+             
+              <ul class="currencies-list" data-list="to"></ul>
+            </div>
+          </div>
+
+          <button class="btn btn--swap">
+            <i class="fas fa-exchange-alt fa-2x"></i>
+          </button>
+
+          <div class="form__group">
+            <button class="btn dropdown-open btn-to" data-currency="PLN">
+              <div class="btn-content">
+                <img src="/PLN.e5be4ab8.png" alt="PLN">
+                <p>PLN</p>
+              </div>
+              <i class="arrow arrow--down"></i><p></p>
+            </button>
+            <div class="dropdown">
+              <input type="text" class="input--search" placeholder="Wyszukaj...">
+              <ul class="currencies-list" data-list="from"></ul>
+            </div>
+          </div>
+
+          <button type="submit" class="btn btn--submit">
+            <i class="arrow arrow--right"></i><p></p>
+          </button>
+        </form>
+        <div class="result">
+          <h2 class="result__amount"></h2>
+          <div class="result__info">
+            <div>
+              <p class="result__info__one-xy"></p>
+              <p class="result__info__one-yx"></p>
+            </div>
+            <p class="result__info__last-update"></p>
+          </div>
+        </div>
+      </section>
+
+      <section class="chart">
+        <div class="chart__header">
+          <button class="btn btn--chart open-chart-dropdown">
+            <p class="chart__months">1 Miesiąc</p>
+            <i class="arrow arrow--down"></i>
+          </button>
+          <div class="chart__dropdown">
+            <button class="btn btn--chart " data-days="30">
+              <p>1 Miesiąc</p>
+            </button>
+            <button class="btn btn--chart" data-days="90">
+              <p>3 Miesiące</p>
+            </button>
+            <button class="btn btn--chart" data-days="180">
+              <p>6 Miesięcy</p>
+            </button>
+            <button class="btn btn--chart" data-days="360">
+              <p>1 Rok</p>
+            </button>
+          </div>
+        </div>
+        <canvas id="myChart" canvas="">
+      </canvas></section>
+    </div>
+  </body>
+</html>
