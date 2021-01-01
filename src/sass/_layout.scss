@@ -8,7 +8,7 @@
 @media (max-width: 640px) {
   .form {
     flex-direction: column;
-    padding-top: 50px;
+    padding-top: 1.1rem;
 
     &__group {
       margin: auto;
@@ -44,7 +44,7 @@
         display: flex;
         justify-content: space-between;
         padding: 0 1.1rem;
-        margin-bottom: 1rem;
+        margin-bottom: 1.1rem;
 
         img {
           width: 60px;
@@ -77,9 +77,11 @@
     text-align: center;
   }
 
-  .result__info {
-    flex-direction: column;
-    text-align: center;
+  .result {
+    &__info {
+      flex-direction: column;
+      text-align: center;
+    }
   }
 
   .chart {
