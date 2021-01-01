@@ -10,7 +10,7 @@ const controlCurrencies = async function () {
 
 const controlSearchCurrency = async function () {
   try {
-    const formData = View.getFormData();
+    const formData = View.getSearchFormData();
 
     View.renderSearchCurrency(
       await model.searchCurrency(formData.amount, formData.from, formData.to)
@@ -25,7 +25,7 @@ const controlSearchCurrency = async function () {
 };
 
 const controlChartByDays = async function () {
-  const formData = View.getFormData();
+  const formData = View.getSearchFormData();
   const daysChart = View.daysChart;
 
   const dataTimeSeries = await model.getCurrencyTimeSeries(

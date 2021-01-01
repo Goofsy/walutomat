@@ -142,7 +142,7 @@ class View {
     });
   }
 
-  getFormData() {
+  getSearchFormData() {
     return {
       amount: this._inputAmount.value,
       from: this._btnFrom.dataset.currency,
