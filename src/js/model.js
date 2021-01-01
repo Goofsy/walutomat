@@ -1,4 +1,3 @@
-// import 'regenerator-runtime/runtime';
 import { API_URL } from './config.js';
 
 export const state = {
