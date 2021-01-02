@@ -36,7 +36,7 @@ class View {
     config.data.labels = dates;
     config.data.datasets[0].data = rates;
     config.data.datasets[0].label = `1 ${from} = `;
-    config.options.title.text = `${from} na ${to}`;
+    config.options.title.text = `Historia zmian ${from} na ${to}`;
     this.myChart.update();
   }
 
@@ -99,7 +99,7 @@ class View {
         title: {
           display: true,
           position: 'top',
-          text: `${from} na ${to}`,
+          text: `Historia zmian ${from} na ${to}`,
           fontSize: 22,
         },
         legend: {
