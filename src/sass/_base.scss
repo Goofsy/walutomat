@@ -12,7 +12,7 @@ $medium-color: rgb(210, 210, 210);
 $dark-color: #333;
 $primary-color: #27ae60;
 
-// Body
+// Base
 body {
   min-height: 100vh;
   font-family: sans-serif;
@@ -26,6 +26,13 @@ body {
       rgb(114, 209, 146) 78%,
       rgb(39, 174, 96) 100%
     );
+}
+
+.container {
+  max-width: $site-width;
+  margin: auto;
+  height: 100%;
+  padding: 0;
 }
 
 // Calculator

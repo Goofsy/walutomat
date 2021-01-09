@@ -9,21 +9,17 @@
   },
   "author": "Dawid",
   "license": "ISC",
-  "devDependencies": {
+  "dependencies": {
     "@fortawesome/fontawesome-free": "^5.15.1",
     "autoprefixer": "^9.3.1",
     "parcel-bundler": "^1.12.4",
     "postcss-modules": "^4.0.0",
-    "sass": "^1.30.0"
-  },
-  "dependencies": {
+    "sass": "^1.30.0",
     "core-js": "^2.6.12"
   },
   "postcss": {
     "plugins": {
-      "autoprefixer": {
-        "grid": true
-      }
+      "autoprefixer": true
     }
   }
 }

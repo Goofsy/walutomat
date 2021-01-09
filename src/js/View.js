@@ -28,7 +28,13 @@ class View {
 
   inputSearchCurrenciesValue;
   daysChart;
-  constructor() {}
+  constructor() {
+    this._handlerSwapCurrencies();
+    this._handlerChooseCurrencies();
+    this._handlerCloseCurrenciesList();
+    this._handlerOpenDropdownChart();
+    this._handlerCloseDropdownChart();
+  }
 
   // Chart
   updateChart({ from, to, dates, rates }) {
@@ -50,7 +56,7 @@ class View {
     });
   }
 
-  handlerCloseDropdownChart() {
+  _handlerCloseDropdownChart() {
     window.addEventListener('click', e => {
       if (e.target.closest('.open-chart-dropdown')) return;
 
@@ -58,7 +64,7 @@ class View {
     });
   }
 
-  handlerOpenDropdownChart() {
+  _handlerOpenDropdownChart() {
     this._btnOpenDropdownChart.addEventListener('click', e => {
       this._chartDropdown.style.display = 'block';
     });
@@ -189,7 +195,7 @@ class View {
     this._btnsDropdownOpen[1].dataset.currency = btn1data;
   }
 
-  handlerSwapCurrencies() {
+  _handlerSwapCurrencies() {
     this._btnSwap.addEventListener('click', this._swapCurrencies.bind(this));
   }
 
@@ -219,7 +225,7 @@ class View {
       .querySelector('.btn-content').innerHTML = markup;
   }
 
-  handlerChooseCurrency() {
+  _handlerChooseCurrencies() {
     [...this._currenciesLists].forEach(list => {
       list.addEventListener('click', this._chooseCurrency.bind(this));
     });
@@ -234,7 +240,7 @@ class View {
     );
   }
 
-  handlerCloseCurrenciesList() {
+  _handlerCloseCurrenciesList() {
     document.body.addEventListener('click', e => {
       if (
         e.target.closest('.dropdown-open') ||
