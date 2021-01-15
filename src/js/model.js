@@ -43,7 +43,7 @@ export const searchCurrency = async function (
 ) {
   try {
     if (amount < 1) throw new Error('Wpisz minimum 1');
-    if (amount.length > 10) throw new Error('Za duza kwota');
+    if (amount.length > 7) throw new Error('Za duża kwota');
     const res = await fetch(
       `${API_URL}latest?amount=${amount}&from=${from}&to=${to}`
     );
