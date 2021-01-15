@@ -42,7 +42,7 @@ const init = async function () {
   View.addHandlerSearchRate(controlSearchCurrency);
   View.addHandlerSearchRateByEnter(controlSearchCurrency);
   View.addHandlerFilterCurrencies(controlCurrencies);
-  View.handlerOpenCurrenciesList(model.state.currencies);
+  View.handleOpenCurrenciesList(model.state.currencies);
   View.renderChart(await model.getCurrencyTimeSeries());
   View.addHandlerSelectMonthsChart(controlChartByDays);
 };
